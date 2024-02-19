@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1>Your Shopping Cart</h1> -->
+    {% if cart_items %}
+    <table>
+        <thead>
+            <tr><th colspan="4">Your Shopping Cart</th></tr>
+             <th>user_id</th>
+             <th>username</th>
+             <th>product_id</th>
+             <th>product_name</th>
+        </thead>
+        <tbody>
+            {% for item in cart_items %}
+            <tr>
+                <td>{{item.uid}}</td>
+                <td>{{item.uid}}</td>
+                <td>{{item.pid}}</td>
+                <td>{{item.pid}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>Your cart is empty.</p>
+    {% endif %}
+ 
+    
+ 
+    
+        
+
+ 
+    
+ 
+    <a href="/product/index">Continue Shopping</a>
+</body>
+</html>

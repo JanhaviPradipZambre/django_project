@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html >
+<head>
+    
+    <title>Registration Form</title>
+</head>
+<body>
+    <table border="1" width="40%" height="600px" align="center">
+        <form method="POST">
+            {% csrf_token %}
+
+        <tr align="center">
+            <th  colspan="2"> Customer Details </th>
+        </tr>
+
+        <tr align="left">
+            <th>
+                <label for="first_name"> First Name</label>
+            </th>
+            <th >
+                <input type="text" id="first_name" name="first_name" value="{{customer.uid}}" >
+            </th>
+        </tr>
+
+        <tr align="left">
+            <th>
+                <label for="lat_name"> Last Name</label>
+            </th>
+            <th>
+                <input type="text" id="last_name" name="last_name" value="{{customer.last_name}}">
+            </th>
+        </tr>
+
+        <tr align="left">
+            <th>
+                <label for="phone"> Phone</label>
+            </th>
+            <th>
+                <input type="tel" id="phone" name="phone" value="{{customer.phone}}">
+            </th>
+        </tr>
+        
+        <tr align="left">
+            <th>
+                <label for="email"> Email </label>
+            </th>
+            <th>
+                <input type="email" id="email" name="email" value="{{customer.email}}">
+            </th>
+        </tr>
+
+        <tr align="left">
+                    <th><label for="address_type">Address</label></th>
+                    <th>
+                        <select name="address_type" id="address_type">
+                            <option value="home">Home</option>
+                            <option value="office">Office</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </th>
+                </tr>
+
+        <tr align="left">
+            <th>
+                <label for="full_address"> Full Address</label>
+                <th><textarea name="full_address" id="full_address" cols="30" rows="5">{{customer.full_address}}</textarea></th>
+
+        </tr> 
+
+        <tr align="left">
+            <th>
+                <label for="pincode"> Pincode</label>
+            </th>
+            <th>
+                <input type="number" name="pincode" id="pincode" value="{{customer.pincode}}">
+            </th>
+        </tr>
+
+        <tr align="left">
+            <th>
+                <label> </label>
+            </th>
+            <th>
+                <input type="Submit">
+            </th>
+        </tr>
+
+      
+
+    </table>
+</body>
+</html>

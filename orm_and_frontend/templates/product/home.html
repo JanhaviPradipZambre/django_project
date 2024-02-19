@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header{
+            width: 100%;
+            height: 50px;
+            background-color: orange;
+            position: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        header * {
+            display: inline;
+        }
+
+        header li {
+            margin: 20px;
+        }
+
+        header li a {
+            color: blue;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome {{user_data}}</h1>
+    <header>
+        <nav>
+            <ul>
+                <li>  <a href="/product/home">HOME</a>  </li>
+                <li>  <a href="/product/index">Product</a>  </li>
+
+                {% if user.is_authenticated %}
+                <li>  <a href="/product/view_cart">View Cart</a>  </li>
+                <li>  <a href="/product/edit_profile">Edit Profile</a>  </li>
+                <li>  <a href="/product/logout">Logout</a>  </li>
+                {% else %}
+                <li>  <a href="/product/login">Login</a>  </li>
+                <li>  <a href="/product/register">Register</a>  </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
